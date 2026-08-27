@@ -66,6 +66,25 @@ class Clearing:
             raise IllegalActionError(f"No free slots in clearing {self.id}")
         
         self.buildings.append((faction, building_type))
+
+    def remove_building(self, faction, building_type):
+        key = (faction, building_type)
+        if key not in self.buildings:
+            raise IllegalActionError(f"No {building_type} of {faction} in clearing {self.id}")
+
+        self.buildings.remove(key)
+
+    def add_token(self, faction, token_type):
+        self.tokens[(faction, token_type)] += 1
+
+    def remove_token(self, faction, token_type):
+        key = (faction, token_type)
+        if self.tokens[key] <= 0:
+            raise IllegalActionError(f"No {token_type} of {faction} in clearing {self.id}")
+
+        self.tokens[key] -= 1
+        if self.tokens[key] == 0:
+            del self.tokens[key]
     
     def change_warriors(self, faction, num):
         if self.warriors[faction] + num < 0:
@@ -75,3 +94,5 @@ class Clearing:
 
         if self.warriors[faction] == 0:
             del self.warriors[faction]
+
+    

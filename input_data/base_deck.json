@@ -1,0 +1,33 @@
+{
+  "deck": "base",
+  "cards": [
+    {
+      "suit": "mouse",
+      "cost": "1_mouse",
+      "vp": 0,
+      "item": "none",
+      "desc": "paper_Once in Daylight, may look at another player's hand."
+    },
+    {
+      "suit": "mouse",
+      "cost": "1_mouse",
+      "vp": 0,
+      "item": "none",
+      "desc": "paper_Once in Daylight, may look at another player's hand."
+    },
+    {
+      "suit": "mouse",
+      "cost": "1_mouse",
+      "vp": 2,
+      "item": "tea",
+      "desc": "none_"
+    },
+    {
+      "suit": "mouse",
+      "cost": "1_mous",
+      "vp": 1,
+      "item": "bag",
+      "desc": "none_"
+    }
+  ]
+}

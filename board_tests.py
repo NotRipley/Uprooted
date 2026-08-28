@@ -1,9 +1,9 @@
 from utils.board import Board
 
-def setup_board(board_filepath, summary=False):
+def setup_board(board_filepath, summary=False, test_clearing=1):
     board = Board(board_filepath)
 
-    # --- human-summary ---
+    # --- human summary ---
     if summary:
         for c in board.clearings.values():
             tags = []
@@ -17,7 +17,8 @@ def setup_board(board_filepath, summary=False):
 
             print(f"{c.id}: {c.suit} slots={c.building_slots} {tags_str} neighbours={board.neighbours(c.id)}")
         print(f"{len(board.paths)} paths, {len(board.rivers)} rivers")
-    # --- check everything setup ---
+
+    # --- check everything setup properly ---
     assert len(board.clearings) == 12, f"expected 12 clearings got {len(board.clearings)}"
     
     suits = [c.suit for c in board.clearings.values()]
@@ -33,7 +34,6 @@ def setup_board(board_filepath, summary=False):
     
     for c in board.clearings:
         assert board.neighbours(c), f"clearing {c} is isolated"
-    
 
     print("All checks passed")
     return board

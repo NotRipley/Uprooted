@@ -9,18 +9,49 @@ class IllegalActionError(Exception):
     "Error class so it's easy to debug an illegal action"
     pass
 
+class InvalidMapError(Exception):
+    "Error class so a invalid map doesn't silently load"
+    pass
+
 class Board:
     """
     This is the board state, each clearing has a suit, and building slots. We can also add troops and buildings.
     """
-    def __init__(self, board_filepath):
+    def __init__(self, board_filepath, summary=False):
         with open(board_filepath) as f:
             data = json.load(f)
         
         self.clearings ={c["id"]: Clearing(c["id"], c["suit"], c["slots"], c.get("ruins", 0), c.get("corner", False)) for c in data["clearings"]}
         self.paths = {tuple(sorted(e)) for e in data["paths"]}
         self.rivers = {tuple(sorted(e)) for e in data["rivers"]}
+
+        self._validate(summary)
     
+    def _validate(self, summary):
+        if summary:
+            for c in board.clearings.values():
+                tags = []
+
+                if c.corner:
+                    tags.append("corner")
+                if c.ruins:
+                    tags.append(f"{c.ruins} ruin(s)")
+                
+                tags_str = f"[{', '.join(tags)}]" if tags else ""
+
+                print(f"{c.id}: {c.suit} slots={c.building_slots} {tags_str} neighbours={board.neighbours(c.id)}")
+            print(f"{len(board.paths)} paths, {len(board.rivers)} rivers")
+
+        for (a, b) in self.paths | self.rivers:
+            if a not in self.clearings or b not in self.clearings:
+                raise InvalidMapError(f"edge ({a},{b}) references unknown clearing")
+            if a == b:
+                raise InvalidMapError(f"self-loop on {a}")
+    
+        for c in self.clearings:
+            if not self.neighbours(c):
+                raise InvalidMapError(f"clearing {c} is isolated")
+
     def adjacent(self, a, b, edge_type="land"):
         edges = self.paths if edge_type == "land" else self.rivers
 

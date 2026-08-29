@@ -5,6 +5,7 @@ Each card has a suit, cost, VP reward, item reward and description.
 def InvalidCardError(Exception):
     "Raise error if the card is not valid"
     pass
+
 class Card:
     def __init__(self, suit, cost, VP, item, desc):
         """
@@ -43,7 +44,7 @@ class Card:
                 f"({type(suit)}, {type(cost)}, {type(VP)}, {type(item)}, {type(desc)}."
             )
 
-def cards_from_json(card_json):
+def deck_reader(card_json):
     """
     :param card_json: a .json file containing the information for an entire deck of cards.
     :return: a list of Card objects.

@@ -45,7 +45,9 @@ class Card:
 
 class Deck:
     def __init__(self, cards):
-        pass
+        self.cards = cards
+
+
 
 # --- unbound functions ---
 
@@ -59,9 +61,18 @@ def deck_reader(deck_filepath):
     with open(deck_filepath, "r") as f:
         deck_config = json.load(f)
 
+    # --- validate json ---
+
     # --- make list of card objects ---
+    card_list = []
+    for suit in deck_config["cards"]:
+        for cost_suit in deck_config["cards"][suit]:
+            for card_config in deck_config["cards"][suit][cost_suit]:
+                card = Card(card_config["cost_quant"], card_config["vp"], card_config["item"], card_config["desc"])
+                card_list.append(card)
 
     # --- give list to Deck instance ---
+    return Deck(card_list)
 
 def InvalidCardError(Exception):
     "Raise error if the card is not valid"

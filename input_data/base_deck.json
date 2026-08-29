@@ -1,33 +1,152 @@
 {
   "deck": "base",
-  "cards": [
-    {
-      "suit": "mouse",
-      "cost": "1_mouse",
-      "vp": 0,
-      "item": "none",
-      "desc": "paper_Once in Daylight, may look at another player's hand."
+  "cards": {
+    "mouse": {
+      "mouse": [
+        {
+          "cost_quant": "1",
+          "vp": 0,
+          "item": "none",
+          "desc": "once in daylight may look at another players hand"
+        },
+        {
+          "cost_quant": "1",
+          "vp": 0,
+          "item": "",
+          "desc": "once in daylight may look at another players hand"
+        },
+        {
+          "cost_quant": "1",
+          "vp": 2,
+          "item": "tea",
+          "desc": ""
+        },
+        {
+          "cost_quant": "1",
+          "vp": 1,
+          "item": "bag",
+          "desc": ""
+        },
+        {
+          "cost_quant": "2",
+          "vp": 0,
+          "item": "",
+          "desc": "as attacker in battle you are not affected by ambush cards"
+        },
+        {
+          "cost_quant": "2",
+          "vp": 0,
+          "item": "",
+          "desc": "as attacker in battle you are not affected by ambush cards"
+        },
+        {
+          "cost_quant": "3",
+          "vp": 0,
+          "item": "",
+          "desc": "remove all enemy pieces in mouse clearings then discard"
+        }
+      ],
+      "rabbit": [
+        {
+          "cost_quant": "1",
+          "vp": 1,
+          "item": "boot",
+          "desc": ""
+        },
+        {
+          "cost_quant": "2",
+          "vp": 3,
+          "item": "coin",
+          "desc": ""
+        }
+      ],
+      "fox": [
+        {
+          "cost_quant": "1",
+          "vp": 1,
+          "item": "crossbow",
+          "desc": ""
+        },
+        {
+          "cost_quant": "2",
+          "vp": 2,
+          "item": "sword",
+          "desc": ""
+        }
+      ]
     },
-    {
-      "suit": "mouse",
-      "cost": "1_mouse",
-      "vp": 0,
-      "item": "none",
-      "desc": "paper_Once in Daylight, may look at another player's hand."
+    "rabbit": {
+      "mouse": [
+        {
+          "cost_quant": "1",
+          "vp": 2,
+          "item": "tea",
+          "desc": ""
+        },
+        {
+          "cost_quant": "1",
+          "vp": 1,
+          "item": "bag",
+          "desc": ""
+        }
+      ],
+      "rabbit": [
+        {
+          "cost_quant": "1",
+          "vp": 1,
+          "item": "boot",
+          "desc": ""
+        },
+        {
+          "cost_quant": "2",
+          "vp": 0,
+          "item": "",
+          "desc": "at start of birdsong you and another player draw a card"
+        },
+        {
+          "cost_quant": "2",
+          "vp": 0,
+          "item": "",
+          "desc": "at start of birdsong you and another player draw a card"
+        },
+        {
+          "cost_quant": "2",
+          "vp": 0,
+          "item": "",
+          "desc": "at start of daylight may initiate a battle"
+        },
+        {
+          "cost_quant": "2",
+          "vp": 0,
+          "item": "",
+          "desc": "at start of daylight may initiate a battle"
+        },
+        {
+          "cost_quant": "2",
+          "vp": 0,
+          "item": "",
+          "desc": "at start of evening may take a move"
+        },
+        {
+          "cost_quant": "2",
+          "vp": 0,
+          "item": "",
+          "desc": "at start of evening may take a move"
+        },
+        {
+          "cost_quant": "2",
+          "vp": 3,
+          "item": "coin",
+          "desc": ""
+        }
+      ],
+      "fox": []
     },
-    {
-      "suit": "mouse",
-      "cost": "1_mouse",
-      "vp": 2,
-      "item": "tea",
-      "desc": "none_"
+    "fox": {
+      "mouse": [],
+      "rabbit": [],
+      "fox": []
     },
-    {
-      "suit": "mouse",
-      "cost": "1_mous",
-      "vp": 1,
-      "item": "bag",
-      "desc": "none_"
+    "extra": []
     }
-  ]
-}
+  }

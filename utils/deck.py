@@ -2,10 +2,9 @@
 We model the deck as a list of cards.
 Each card has a suit, cost, VP reward, item reward and description.
 """
-def InvalidCardError(Exception):
-    "Raise error if the card is not valid"
-    pass
+import json
 
+# --- classes ---
 class Card:
     def __init__(self, suit, cost, VP, item, desc):
         """
@@ -44,9 +43,26 @@ class Card:
                 f"({type(suit)}, {type(cost)}, {type(VP)}, {type(item)}, {type(desc)}."
             )
 
-def deck_reader(card_json):
+class Deck:
+    def __init__(self, cards):
+        pass
+
+# --- unbound functions ---
+
+def deck_reader(deck_filepath):
     """
-    :param card_json: a .json file containing the information for an entire deck of cards.
-    :return: a list of Card objects.
+    Read in deck JSON and return a Deck object with its cards.
+    :param deck_filepath: filepath of a .json file containing the information for an entire deck of cards.
+    :return: a Deck object.
     """
+    # --- open json and read out inputs ---
+    with open(deck_filepath, "r") as f:
+        deck_config = json.load(f)
+
+    # --- make list of card objects ---
+
+    # --- give list to Deck instance ---
+
+def InvalidCardError(Exception):
+    "Raise error if the card is not valid"
     pass

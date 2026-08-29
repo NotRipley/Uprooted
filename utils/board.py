@@ -69,7 +69,7 @@ class Board:
 
     def move_warriors(self, faction, move_from, move_to, num, edge_type="land"):
         if not self.adjacent(move_from, move_to, edge_type):
-            raise IllegalActionError(f"{src} and {dst} are not connected by {edge_type}")
+            raise IllegalActionError(f"{move_from} and {move_to} are not connected by {edge_type}")
             
         self.clearings[move_from].change_warriors(faction, -num)
         self.clearings[move_to].change_warriors(faction, num)

@@ -22,7 +22,7 @@ def board(tmp_path):
             {"id": 2, "suit": "mouse", "slots": 1},
             {"id": 3, "suit": "rabbit", "slots": 1},
         ],
-        "paths": [[1, 2]],
+        "paths": [[1, 2], [1,3]],
         "rivers": [[2, 3]],
     }
     p = tmp_path / "test_map.json"

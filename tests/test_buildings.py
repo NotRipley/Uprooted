@@ -1,15 +1,6 @@
 import pytest
-from utils.board import Clearing, IllegalActionError
-
-@pytest.fixture
-def clearing():
-    """A plain 2-slot fox clearing."""
-    return Clearing(cid=1, suit="fox", slots=2)
-
-@pytest.fixture
-def ruined_clearing():
-    """2 slots but 1 taken by a ruin -> only 1 free."""
-    return Clearing(cid=2, suit="mouse", slots=2, ruins=1)
+from tests.fixtures import clearing, ruined_clearing
+from utils.board import IllegalActionError
 
 def test_add_building(clearing):
     clearing.add_building("marquise", "sawmill")

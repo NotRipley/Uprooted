@@ -1,10 +1,6 @@
 import pytest
-from utils.board import Clearing, IllegalActionError
-
-@pytest.fixture
-def clearing():
-    """A plain 2-slot fox clearing."""
-    return Clearing(cid=1, suit="fox", slots=2)
+from tests.fixtures import clearing
+from utils.board import IllegalActionError
 
 def test_add_warriors(clearing):
     clearing.change_warriors("marquise", 3)

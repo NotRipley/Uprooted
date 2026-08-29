@@ -2,7 +2,9 @@
 We model the deck as a list of cards.
 Each card has a suit, cost, VP reward, item reward and description.
 """
-
+def InvalidCardError(Exception):
+    "Raise error if the card is not valid"
+    pass
 class Card:
     def __init__(self, suit, cost, VP, item, desc):
         """
@@ -25,6 +27,10 @@ class Card:
 
     def bouncer(self, suit, cost, VP, item, desc):
         """Input validation."""
+        suits = ["bird", "fox", "mouse", "rabbit"]
+        if suit not in suits:
+            raise InvalidCardError(f"Expected suit to be {", ".join(suits)} but got {suit}")
+            
         if not (
             isinstance(suit, str) and
             isinstance(cost, str) and

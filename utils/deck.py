@@ -25,10 +25,12 @@ class Card:
         self.item = item
         self.desc = desc
         # idx -1 to represent not set yet
-        self.idx = -1
+        ## What do you mean by the comment above?
+        self.idx = -1 
 
     def bouncer(self, suit, cost, vp, item, desc):
         """Input validation."""
+        #Check suit is valid
         suits = ["bird", "fox", "mouse", "rabbit"]
         if suit not in suits:
             raise InvalidCardError(f"Expected suit to be {", ".join(suits)} but got {suit}")
@@ -50,6 +52,14 @@ class Deck:
         self.cards = cards_list
         self.bouncer()
 
+    def load(self, filepath):
+        "Load the deck from a json object"
+        pass
+    
+    def draw(self, n):
+        "Draw n cards from the deck. Remove the cards drawn from the deck and return them (to be added to hand etc.)"
+        pass
+
     def bouncer(self):
         """Check the cards have been inherited correctly."""
         pass
@@ -58,7 +68,7 @@ class Deck:
 
 # --- unbound functions ---
 
-def deck_reader(deck_filepath):
+def deck_reader(deck_filepath): # This should be sm like Deck.load(filepath) to initialise the deck
     """
     Read in deck JSON and return a Deck object with its cards.
     :param deck_filepath: filepath of a .json file containing the information for an entire deck of cards.
@@ -75,7 +85,7 @@ def deck_reader(deck_filepath):
     cards_config = deck_config["cards"]
     for i, card in enumerate(cards_config):
         item = Card(**card)
-        item.idx = i
+        item.idx = i # what is this idx for? doesn't seem to be used anywhere?
         cards_list.append(item)
 
     # --- give list to Deck instance ---

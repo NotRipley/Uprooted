@@ -1,31 +1,31 @@
 """
 We model the deck as a list of cards.
-Each card has a suit, cost, VP reward, item reward and description.
+Each card has a suit, cost, vp reward, item reward and description.
 """
 import json
 
 # --- classes ---
 class Card:
-    def __init__(self, suit, cost, VP, item, desc):
+    def __init__(self, suit, cost, vp, item, desc):
         """
         Assign parameter values to Card instance.
         :param suit: "mouse"/"rabbit"/"fox"/"bird" | str
         :param cost: format (number_suit) e.g. "2_fox" | str
-        :param VP: number of victory points | int
+        :param vp: number of victory points | int
         :param item: "boot"/"bag"/"crossbow"/"hammer"/"sword"/"tea"/"coin" | str
         :param desc: text on the card | str
         """
         # bouncer checks for stupid inputs
-        self.bouncer(suit, cost, VP, item, desc)
+        self.bouncer(suit, cost, vp, item, desc)
 
         # if past the bouncer we make the card
         self.suit = suit
         self.cost = cost
-        self.VP = VP
+        self.vp = vp
         self.item = item
         self.desc = desc
 
-    def bouncer(self, suit, cost, VP, item, desc):
+    def bouncer(self, suit, cost, vp, item, desc):
         """Input validation."""
         suits = ["bird", "fox", "mouse", "rabbit"]
         if suit not in suits:
@@ -34,18 +34,23 @@ class Card:
         if not (
             isinstance(suit, str) and
             isinstance(cost, str) and
-            isinstance(VP, int) and
+            isinstance(vp, int) and
             isinstance(item, str) and
             isinstance(desc, str)
         ):
             raise TypeError(
                 f"Expected (str, str, int, str, str), got"
-                f"({type(suit)}, {type(cost)}, {type(VP)}, {type(item)}, {type(desc)}."
+                f"({type(suit)}, {type(cost)}, {type(vp)}, {type(item)}, {type(desc)}."
             )
 
 class Deck:
-    def __init__(self, cards):
-        self.cards = cards
+    def __init__(self, cards_list):
+        self.cards = cards_list
+        self.bouncer()
+
+    def bouncer(self):
+        """Check the cards have been inherited correctly."""
+        pass
 
 
 
@@ -64,15 +69,13 @@ def deck_reader(deck_filepath):
     # --- validate json ---
 
     # --- make list of card objects ---
-    card_list = []
-    for suit in deck_config["cards"]:
-        for cost_suit in deck_config["cards"][suit]:
-            for card_config in deck_config["cards"][suit][cost_suit]:
-                card = Card(card_config["cost_quant"], card_config["vp"], card_config["item"], card_config["desc"])
-                card_list.append(card)
+    cards_list = []
+    cards_config = deck_config["cards"]
+    for card in cards_config:
+        cards_list.append(Card(**card))
 
     # --- give list to Deck instance ---
-    return Deck(card_list)
+    return Deck(cards_list)
 
 def InvalidCardError(Exception):
     "Raise error if the card is not valid"

@@ -52,14 +52,14 @@
     },
     {
       "suit": "mouse",
-      "cost_quant": "1_rabbit",
+      "cost": "1_rabbit",
       "vp": 1,
       "item": "boot",
       "desc": ""
     },
     {
       "suit": "mouse",
-      "cost_quant": "2_rabbit",
+      "cost": "2_rabbit",
       "vp": 3,
       "item": "coin",
       "desc": ""

@@ -24,6 +24,8 @@ class Card:
         self.vp = vp
         self.item = item
         self.desc = desc
+        # idx -1 to represent not set yet
+        self.idx = -1
 
     def bouncer(self, suit, cost, vp, item, desc):
         """Input validation."""
@@ -71,8 +73,10 @@ def deck_reader(deck_filepath):
     # --- make list of card objects ---
     cards_list = []
     cards_config = deck_config["cards"]
-    for card in cards_config:
-        cards_list.append(Card(**card))
+    for i, card in enumerate(cards_config):
+        item = Card(**card)
+        item.idx = i
+        cards_list.append(item)
 
     # --- give list to Deck instance ---
     return Deck(cards_list)

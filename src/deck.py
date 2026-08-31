@@ -5,6 +5,7 @@ Each card has a suit, cost, vp reward, item reward and description.
 import json
 import numpy as np
 from errors import InvalidCardError
+import random
 
 # --- classes ---
 class Card:
@@ -60,20 +61,23 @@ class Deck:
         self.cards = cards_list
         self.draw_pile = self.cards
         self.discard_pile = []
+
     
     def draw(self, n):
         "Draw n cards from the deck. Remove the cards drawn from the deck and return them (to be added to hand etc.)"
         # --- check enough cards to draw and if not, reshuffle ---
         # a point here: it should draw as many as it can, then reshuffle when it hits zero
         if n > len(self.draw_pile):
-
+            # --- draw down to empty, store, reshuffle ---
+            extra = self.draw_pile
+            n -= len(self.draw_pile)
             print("not enough cards to draw => reshuffling \n")
             self.reshuffle()
-
+        else:
+            extra = []
         # --- draw and return ---
-        draw_indices = np.random.randint(len(self.draw_pile), size=n)
-        cards_to_draw = self.draw_pile[draw_indices]
-        self.draw_pile.pop(draw_indices)
+        cards_to_draw = random.sample(self.draw_pile, n)
+        cards_to_draw.extend(extra)
         return cards_to_draw
 
     def reshuffle(self):

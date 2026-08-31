@@ -1,5 +1,5 @@
 import pytest
-from utils.board import Board, Clearing, IllegalActionError
+from src.board import Board, Clearing
 
 @pytest.fixture
 def clearing():

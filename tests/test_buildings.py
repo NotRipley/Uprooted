@@ -1,6 +1,6 @@
 import pytest
 from tests.fixtures import clearing, ruined_clearing
-from utils.board import IllegalActionError
+from src.errors import IllegalActionError
 
 def test_add_building(clearing):
     clearing.add_building("marquise", "sawmill")

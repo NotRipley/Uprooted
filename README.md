@@ -6,15 +6,13 @@ This is a repo exploring the game of root (and someday) creating models to play.
 ```
 |-- utils/
     Files that will be utility functions and classes (e.g. cards class)
-|-- inputs/
+|-- input-data/
     Files where we can input and change the value of initialisation
-    |-- Board.py
-    |-- Deck.py
+|-- tests/
+    Tests to check behaviour
     
 Uprooted/
    ├── input_data/
-   │   ├── board.py
-   │   └── deck.py
    ├── tests/
    ├── utils/
    ├── LICENSE

@@ -1,6 +1,6 @@
 import pytest
 from tests.fixtures import clearing
-from utils.board import IllegalActionError
+from src.errors import IllegalActionError
 
 def test_add_warriors(clearing):
     clearing.change_warriors("marquise", 3)

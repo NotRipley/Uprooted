@@ -3,6 +3,7 @@ We model the deck as a list of cards.
 Each card has a suit, cost, vp reward, item reward and description.
 """
 import json
+from errors import InvalidCardError
 
 # --- classes ---
 class Card:
@@ -91,6 +92,3 @@ def deck_reader(deck_filepath): # This should be sm like Deck.load(filepath) to 
     # --- give list to Deck instance ---
     return Deck(cards_list)
 
-def InvalidCardError(Exception):
-    "Raise error if the card is not valid"
-    pass

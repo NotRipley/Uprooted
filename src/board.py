@@ -5,13 +5,7 @@ Each clearing has a suit, building slots and list of neighbours (which will be u
 from collections import defaultdict
 import json
 
-class IllegalActionError(Exception):
-    "Error class so it's easy to debug an illegal action"
-    pass
-
-class InvalidMapError(Exception):
-    "Error class so a invalid map doesn't silently load"
-    pass
+from .errors import InvalidMapError, IllegalActionError
 
 class Board:
     """
@@ -25,23 +19,9 @@ class Board:
         self.paths = {tuple(sorted(e)) for e in data["paths"]}
         self.rivers = {tuple(sorted(e)) for e in data["rivers"]}
 
-        self._validate(summary)
+        self._validate()
     
-    def _validate(self, summary):
-        if summary:
-            for c in board.clearings.values():
-                tags = []
-
-                if c.corner:
-                    tags.append("corner")
-                if c.ruins:
-                    tags.append(f"{c.ruins} ruin(s)")
-                
-                tags_str = f"[{', '.join(tags)}]" if tags else ""
-
-                print(f"{c.id}: {c.suit} slots={c.building_slots} {tags_str} neighbours={board.neighbours(c.id)}")
-            print(f"{len(board.paths)} paths, {len(board.rivers)} rivers")
-
+    def _validate(self):
         for (a, b) in self.paths | self.rivers:
             if a not in self.clearings or b not in self.clearings:
                 raise InvalidMapError(f"edge ({a},{b}) references unknown clearing")
@@ -49,7 +29,7 @@ class Board:
                 raise InvalidMapError(f"self-loop on {a}")
     
         for c in self.clearings:
-            if not self.neighbours(c):
+            if not self.neighbours(c) and not self.neighbours(c, "river"):
                 raise InvalidMapError(f"clearing {c} is isolated")
 
     def adjacent(self, a, b, edge_type="land"):
@@ -74,6 +54,21 @@ class Board:
         self.clearings[move_from].change_warriors(faction, -num)
         self.clearings[move_to].change_warriors(faction, num)
 
+    def __repr__(self):
+        lines = []
+        for c in self.clearings.values():
+            tags = []
+
+            if c.corner:
+                tags.append("corner")
+            if c.ruins:
+                tags.append(f"{c.ruins} ruin(s)")
+                
+            tags_str = f"[{', '.join(tags)}]" if tags else ""
+
+            lines.append(f"{c.id}: {c.suit} slots={c.building_slots} {tags_str} neighbours={self.neighbours(c.id)}")
+        lines.append(f"{len(self.paths)} paths, {len(self.rivers)} rivers")
+        return "\n".join(lines)
 
 class Clearing:
     def __init__(self, cid, suit, slots, ruins=0, corner=False):
@@ -110,7 +105,7 @@ class Clearing:
 
     def remove_token(self, faction, token_type):
         key = (faction, token_type)
-        if self.tokens[key] <= 0:
+        if self.tokens.get(key, 0) <= 0:
             raise IllegalActionError(f"No {token_type} of {faction} in clearing {self.id}")
 
         self.tokens[key] -= 1
@@ -118,12 +113,34 @@ class Clearing:
             del self.tokens[key]
     
     def change_warriors(self, faction, num):
-        if self.warriors[faction] + num < 0:
+        if self.warriors.get(faction, 0) + num < 0:
             raise IllegalActionError(f"Not enough {faction} warriors in {self.id}")
         
         self.warriors[faction] += num
 
         if self.warriors[faction] == 0:
             del self.warriors[faction]
+        
+    def current_ruler(self):
+        strength = defaultdict(int)
+
+        for faction, count in self.warriors.items():
+            strength[faction] += count
+
+        for faction, _building_type in self.buildings:
+            strength[faction] += 1
+
+        if not strength:
+            return None                     # empty clearing: no ruler
+
+        best = max(strength.values())
+        leaders = [f for f, s in strength.items() if s == best]
+
+        if len(leaders) == 1:
+            return leaders[0]
+        for leader in leaders:
+            if leader.win_ties: # if the faction has the win_ties ability
+                return leader
+        return None # tied so nobody rules
 
     

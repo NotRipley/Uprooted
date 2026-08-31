@@ -15,6 +15,6 @@ class Faction():
     warrior_cap = 10
 
     def __init__(self):
-        self.warrior_supply = self.warrior_cap.
+        self.warrior_supply = self.warrior_cap
         self.hand = []
         self.vp = 0

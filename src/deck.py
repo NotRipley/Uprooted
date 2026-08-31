@@ -4,7 +4,7 @@ Each card has a suit, cost, vp reward, item reward and description.
 """
 import json
 import numpy as np
-from errors import InvalidCardError
+from src.errors import InvalidCardError
 import random
 
 # --- classes ---
@@ -18,15 +18,27 @@ class Card:
         :param item: "boot"/"bag"/"crossbow"/"hammer"/"sword"/"tea"/"coin" | str
         :param desc: text on the card | str
         """
-        # bouncer checks for stupid inputs
+        # --- input validation ---
         self.bouncer(suit, cost, vp, item, desc)
 
-        # if past the bouncer we make the card
+        # --- attributes ---
         self.suit = suit
         self.cost = cost
         self.vp = vp
         self.item = item
         self.desc = desc
+
+    def __repr__(self):
+        """Print cards nicely"""
+        return (
+            f"\n __________________ \n"
+            f"|{self.suit} card| \n"
+            f" |costing {self.cost}| \n"
+            f" |worth {self.vp}| \n"
+            f" |gives {self.item}| \n"
+            f" {self.desc} \n"
+            f"__________________ \n")
+
 
     def bouncer(self, suit, cost, vp, item, desc):
         """Input validation."""
@@ -75,9 +87,10 @@ class Deck:
             self.reshuffle()
         else:
             extra = []
-        # --- draw and return ---
+        # --- draw, remove and return ---
         cards_to_draw = random.sample(self.draw_pile, n)
         cards_to_draw.extend(extra)
+        self.draw_pile.remove(cards_to_draw)
         return cards_to_draw
 
     def reshuffle(self):

@@ -28,7 +28,7 @@ class Card:
         self.item = item
         self.desc = desc
 
-    def __repr__(self):
+    def __repr__(self): # Very good
         """Print cards nicely"""
         return (
             f"\n __________________ \n"
@@ -65,13 +65,13 @@ class Deck:
         # --- make list of card objects ---
         cards_list = []
         cards_config = deck_config["cards"]
-        for i, card in enumerate(cards_config):
+        for i, card in enumerate(cards_config): # What is the purpose of i?
             item = Card(**card)
             cards_list.append(item)
 
         # --- attach card list ---
-        self.cards = cards_list
-        self.draw_pile = self.cards
+        self.cards = cards_list # what is self.cards for?
+        self.draw_pile = self.cards 
         self.discard_pile = []
 
     
@@ -82,8 +82,10 @@ class Deck:
         if n > len(self.draw_pile):
             # --- draw down to empty, store, reshuffle ---
             extra = self.draw_pile
-            n -= len(self.draw_pile)
-            print("not enough cards to draw => reshuffling \n")
+            n -= len(self.draw_pile) # suggest you use extra instead of self.draw_pile here
+            print("not enough cards to draw => reshuffling \n") # try and include a flag for print statements,
+            # when running things you want to stay away from verbose output as the default because it pollutes your terminal
+            # and adds a lot of unnecessary text
             self.reshuffle()
         else:
             extra = []
@@ -100,6 +102,7 @@ class Deck:
 
     def bouncer(self):
         """Check the cards have been inherited correctly."""
+        # This should be checks like: deck has at least 1 card etc.
         pass
 
 

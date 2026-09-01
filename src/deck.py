@@ -19,7 +19,7 @@ class Card:
         :param desc: text on the card | str
         """
         # --- input validation ---
-        self.bouncer(suit, cost, vp, item, desc)
+        self.check(suit, cost, vp, item, desc)
 
         # --- attributes ---
         self.suit = suit
@@ -32,20 +32,22 @@ class Card:
         """Print cards nicely"""
         return (
             f"\n __________________ \n"
-            f"|{self.suit} card| \n"
-            f" |costing {self.cost}| \n"
-            f" |worth {self.vp}| \n"
-            f" |gives {self.item}| \n"
+            f"{self.suit} card \n"
+            f" costing {self.cost} \n"
+            f" worth {self.vp} \n"
+            f" gives {self.item} \n"
             f" {self.desc} \n"
             f"__________________ \n")
 
 
-    def bouncer(self, suit, cost, vp, item, desc):
+    def check(self, suit, cost, vp, item, desc):
         """Input validation."""
-        #Check suit is valid
+        # --- suit ---
         suits = ["bird", "fox", "mouse", "rabbit"]
         if suit not in suits:
             raise InvalidCardError(f"Expected suit to be {", ".join(suits)} but got {suit}")
+        # --- cost ---
+        
 
 
 

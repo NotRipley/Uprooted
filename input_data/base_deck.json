@@ -1,304 +1,336 @@
 {
-  "deck": "base",
-  "cards": {
-    "mouse": {
-      "mouse": [
-        {
-          "cost_quant": 1,
-          "vp": 0,
-          "item": "none",
-          "desc": "once in daylight may look at another players hand"
-        },
-        {
-          "cost_quant": 1,
-          "vp": 0,
-          "item": "",
-          "desc": "once in daylight may look at another players hand"
-        },
-        {
-          "cost_quant": 1,
-          "vp": 2,
-          "item": "tea",
-          "desc": ""
-        },
-        {
-          "cost_quant": 1,
-          "vp": 1,
-          "item": "bag",
-          "desc": ""
-        },
-        {
-          "cost_quant": 2,
-          "vp": 0,
-          "item": "",
-          "desc": "as attacker in battle you are not affected by ambush cards"
-        },
-        {
-          "cost_quant": 2,
-          "vp": 0,
-          "item": "",
-          "desc": "as attacker in battle you are not affected by ambush cards"
-        },
-        {
-          "cost_quant": 3,
-          "vp": 0,
-          "item": "",
-          "desc": "remove all enemy pieces in mouse clearings then discard"
-        }
-      ],
-      "rabbit": [
-        {
-          "cost_quant": 1,
-          "vp": 1,
-          "item": "boot",
-          "desc": ""
-        },
-        {
-          "cost_quant": 2,
-          "vp": 3,
-          "item": "coin",
-          "desc": ""
-        }
-      ],
-      "fox": [
-        {
-          "cost_quant": 1,
-          "vp": 1,
-          "item": "crossbow",
-          "desc": ""
-        },
-        {
-          "cost_quant": 2,
-          "vp": 2,
-          "item": "sword",
-          "desc": ""
-        }
-      ]
+  "deck_name": "base",
+  "cards" : [
+    {
+      "suit": "mouse",
+      "cost": "1_mouse",
+      "vp": 0,
+      "item": "",
+      "desc": "codebreakers"
     },
-    "rabbit": {
-      "mouse": [
-        {
-          "cost_quant": 1,
-          "vp": 2,
-          "item": "tea",
-          "desc": ""
-        },
-        {
-          "cost_quant": 1,
-          "vp": 1,
-          "item": "bag",
-          "desc": ""
-        }
-      ],
-      "rabbit": [
-        {
-          "cost_quant": 1,
-          "vp": 1,
-          "item": "boot",
-          "desc": ""
-        },
-        {
-          "cost_quant": 2,
-          "vp": 0,
-          "item": "",
-          "desc": "at start of birdsong you and another player draw a card"
-        },
-        {
-          "cost_quant": 2,
-          "vp": 0,
-          "item": "",
-          "desc": "at start of birdsong you and another player draw a card"
-        },
-        {
-          "cost_quant": 2,
-          "vp": 0,
-          "item": "",
-          "desc": "at start of daylight may initiate a battle"
-        },
-        {
-          "cost_quant": 2,
-          "vp": 0,
-          "item": "",
-          "desc": "at start of daylight may initiate a battle"
-        },
-        {
-          "cost_quant": 2,
-          "vp": 0,
-          "item": "",
-          "desc": "at start of evening may take a move"
-        },
-        {
-          "cost_quant": 2,
-          "vp": 0,
-          "item": "",
-          "desc": "at start of evening may take a move"
-        },
-        {
-          "cost_quant": 2,
-          "vp": 3,
-          "item": "coin",
-          "desc": ""
-        }
-      ],
-      "fox": []
+    {
+      "suit": "mouse",
+      "cost": "1_mouse",
+      "vp": 0,
+      "item": "",
+      "desc": "codebreakers"
     },
-    "fox": {
-      "mouse": [
-        {
-          "cost_quant": 1,
-          "vp": 2,
-          "item": "tea",
-          "desc": ""
-        },
-        {
-          "cost_quant": 1,
-          "vp": 1,
-          "item": "bag",
-          "desc": ""
-        },
-        {
-          "cost_quant": 3,
-          "vp": 0,
-          "item": "",
-          "desc": "in birdsong may take a random card from another player that player scores one point"
-        },
-        {
-          "cost_quant": 3,
-          "vp": 0,
-          "item": "",
-          "desc": "in birdsong may take a random card from another player that player scores one point"
-        }
-      ],
-      "rabbit": [
-        {
-          "cost_quant": 1,
-          "vp": 1,
-          "item": "boot",
-          "desc": ""
-        },
-        {
-          "cost_quant": 2,
-          "vp": 3,
-          "item": "coin",
-          "desc": ""
-        }
-      ],
-      "fox": [
-        {
-          "cost_quant": 1,
-          "vp": 2,
-          "item": "hammer",
-          "desc": ""
-        },
-        {
-          "cost_quant": 2,
-          "vp": 2,
-          "item": "sword",
-          "desc": ""
-        },
-        {
-          "cost_quant": 3,
-          "vp": 0,
-          "item": "",
-          "desc": "remove all enemy pieces in fox clearings then discard"
-        }
-      ],
-      "x_tax": [
-        {
-          "cost_quant": 1,
-          "vp": 0,
-          "item": "",
-          "desc": "once in daylight remove one of your warriors to draw a card"
-        },
-        {
-          "cost_quant": 1,
-          "vp": 0,
-          "item": "",
-          "desc": "once in daylight remove one of your warriors to draw a card"
-        },
-        {
-          "cost_quant": 1,
-          "vp": 0,
-          "item": "",
-          "desc": "once in daylight remove one of your warriors to draw a card"
-        }
-      ]
+    {
+      "suit": "mouse",
+      "cost": "1_mouse",
+      "vp": 2,
+      "item": "tea",
+      "desc": ""
     },
-    "bird": {
-      "mouse": [
-        {
-          "cost_quant": 1,
-          "vp": 0,
-          "item": "",
-          "desc": "in battle as defender may discard this to deal an extra hit"
-        },
-        {
-          "cost_quant": 1,
-          "vp": 0,
-          "item": "",
-          "desc": "in battle as defender may discard this to deal an extra hit"
-        },
-        {
-          "cost_quant": 1,
-          "vp": 1,
-          "item": "bag",
-          "desc": ""
-        }
-      ],
-      "rabbit": [
-        {
-          "cost_quant": 1,
-          "vp": 1,
-          "item": "boot",
-          "desc": ""
-        }
-      ],
-      "fox": [
-        {
-          "cost_quant": 1,
-          "vp": 0,
-          "item": "",
-          "desc": "in battle may discard this to ignore all rolled hits taken"
-        },
-        {
-          "cost_quant": 1,
-          "vp": 0,
-          "item": "",
-          "desc": "in battle may discard this to ignore all rolled hits taken"
-        },
-        {
-          "cost_quant": 1,
-          "vp": 1,
-          "item": "crossbow",
-          "desc": ""
-        },
-        {
-          "cost_quant": 2,
-          "vp": 0,
-          "item": "",
-          "desc": "in battle as attacker may deal an extra hit but defender scores one point"
-        },
-        {
-          "cost_quant": 2,
-          "vp": 0,
-          "item": "",
-          "desc": "in battle as attacker may deal an extra but defender scores one point"
-        },
-        {
-          "cost_quant": 2,
-          "vp": 2,
-          "item": "sword",
-          "desc": ""
-        }
-      ],
-      "x_royal": [
-        {
-          "cost_quant": 1,
-          "vp": 0,
-          "item": "",
-          "desc": "in birdsong may discard this to score one point per clearing you rule"
-        }
-      ]
+    {
+      "suit": "mouse",
+      "cost": "1_mouse",
+      "vp": 1,
+      "item": "bag",
+      "desc": ""
+    },
+    {
+      "suit": "mouse",
+      "cost": "2_mouse",
+      "vp": 0,
+      "item": "",
+      "desc": "scouting party"
+    },
+    {
+      "suit": "mouse",
+      "cost": "2_mouse",
+      "vp": 0,
+      "item": "",
+      "desc": "scouting party"
+    },
+    {
+      "suit": "mouse",
+      "cost": "3_mouse",
+      "vp": 0,
+      "item": "",
+      "desc": "favour of the mice"
+    },
+    {
+      "suit": "mouse",
+      "cost": "1_rabbit",
+      "vp": 1,
+      "item": "boot",
+      "desc": ""
+    },
+    {
+      "suit": "mouse",
+      "cost": "2_rabbit",
+      "vp": 3,
+      "item": "coin",
+      "desc": ""
+    },
+    {
+      "suit": "mouse",
+      "cost": "1_fox",
+      "vp": 1,
+      "item": "crossbow",
+      "desc": ""
+    },
+    {
+      "suit": "mouse",
+      "cost": "2_fox",
+      "vp": 1,
+      "item": "sword",
+      "desc": ""
+    },
+    {
+      "suit": "rabbit",
+      "cost": "1_mouse",
+      "vp": 2,
+      "item": "tea",
+      "desc": ""
+    },
+    {
+      "suit": "rabbit",
+      "cost": "1_mouse",
+      "vp": 1,
+      "item": "bag",
+      "desc": ""
+    },
+    {
+      "suit": "rabbit",
+      "cost": "1_rabbit",
+      "vp": 1,
+      "item": "boot",
+      "desc": ""
+    },
+    {
+      "suit": "rabbit",
+      "cost": "2_rabbit",
+      "vp": 0,
+      "item": "",
+      "desc": "better burrow bank"
+    },
+    {
+      "suit": "rabbit",
+      "cost": "2_rabbit",
+      "vp": 0,
+      "item": "",
+      "desc": "better burrow bank"
+    },
+    {
+      "suit": "rabbit",
+      "cost": "2_rabbit",
+      "vp": 0,
+      "item": "",
+      "desc": "command warren"
+    },
+    {
+      "suit": "rabbit",
+      "cost": "2_rabbit",
+      "vp": 0,
+      "item": "",
+      "desc": "command warren"
+    },
+    {
+      "suit": "rabbit",
+      "cost": "2_rabbit",
+      "vp": 0,
+      "item": "",
+      "desc": "cobbler"
+    },
+    {
+      "suit": "rabbit",
+      "cost": "2_rabbit",
+      "vp": 0,
+      "item": "",
+      "desc": "cobbler"
+    },
+    {
+      "suit": "rabbit",
+      "cost": "2_rabbit",
+      "vp": 3,
+      "item": "coin",
+      "desc": ""
+    },
+    {
+      "suit": "rabbit",
+      "cost": "3_rabbit",
+      "vp": 0,
+      "item": "",
+      "desc": "favour of the rabbits"
+    },
+    {
+      "suit": "fox",
+      "cost": "1_mouse",
+      "vp": 2,
+      "item": "tea",
+      "desc": ""
+    },
+    {
+      "suit": "fox",
+      "cost": "1_mouse",
+      "vp": 1,
+      "item": "bag",
+      "desc": ""
+    },
+    {
+      "suit": "fox",
+      "cost": "3_mouse",
+      "vp": 0,
+      "item": "",
+      "desc": "stand and deliver"
+    },
+    {
+      "suit": "fox",
+      "cost": "3_mouse",
+      "vp": 0,
+      "item": "",
+      "desc": "stand and deliver"
+    },
+    {
+      "suit": "fox",
+      "cost": "1_rabbit",
+      "vp": 1,
+      "item": "boot",
+      "desc": ""
+    },
+    {
+      "suit": "fox",
+      "cost": "2_rabbit",
+      "vp": 3,
+      "item": "coin",
+      "desc": ""
+    },
+    {
+      "suit": "fox",
+      "cost": "1_fox",
+      "vp": 2,
+      "item": "hammer",
+      "desc": ""
+    },
+    {
+      "suit": "fox",
+      "cost": "2_fox",
+      "vp": 2,
+      "item": "sword",
+      "desc": ""
+    },
+    {
+      "suit": "fox",
+      "cost": "3_fox",
+      "vp": 0,
+      "item": "",
+      "desc": "remove all enemy pieces in fox clearings then discard"
+    },
+    {
+      "suit": "fox",
+      "cost": "x_tax",
+      "vp": 0,
+      "item": "",
+      "desc": "tax collector"
+    },
+    {
+      "suit": "fox",
+      "cost": "x_tax",
+      "vp": 0,
+      "item": "",
+      "desc": "tax collector"
+    },
+    {
+      "suit": "fox",
+      "cost": "x_tax",
+      "vp": 0,
+      "item": "",
+      "desc": "tax collector"
+    },
+    {
+      "suit": "bird",
+      "cost": "1_mouse",
+      "vp": 0,
+      "item": "",
+      "desc": "sappers"
+    },
+    {
+      "suit": "bird",
+      "cost": "1_mouse",
+      "vp": 0,
+      "item": "",
+      "desc": "sappers"
+    },
+    {
+      "suit": "bird",
+      "cost": "1_mouse",
+      "vp": 1,
+      "item": "bag",
+      "desc": ""
+    },
+    {
+      "suit": "bird",
+      "cost": "1_rabbit",
+      "vp": 1,
+      "item": "boot",
+      "desc": ""
+    },
+    {
+      "suit": "bird",
+      "cost": "1_fox",
+      "vp": 0,
+      "item": "",
+      "desc": "armourers"
+    },
+    {
+      "suit": "bird",
+      "cost": "1_fox",
+      "vp": 0,
+      "item": "",
+      "desc": "armourers"
+    },
+    {
+      "suit": "bird",
+      "cost": "1_fox",
+      "vp": 1,
+      "item": "crossbow",
+      "desc": ""
+    },
+    {
+      "suit": "bird",
+      "cost": "2_fox",
+      "vp": 0,
+      "item": "",
+      "desc": "brutal tactics"
+    },
+    {
+      "suit": "bird",
+      "cost": "2_fox",
+      "vp": 0,
+      "item": "",
+      "desc": "brutal tactics"
+    },
+    {
+      "suit": "bird",
+      "cost": "2_fox",
+      "vp": 2,
+      "item": "sword",
+      "desc": ""
+    },
+    {
+      "suit": "bird",
+      "cost": "x_royal",
+      "vp": 0,
+      "item": "",
+      "desc": "royal claim"
     }
-    }
+  ],
+  "card_descriptions": {
+    "sappers": "in battle as defender may discard this to deal an extra hit",
+    "codebreakers": "once in daylight may look at another players hand",
+    "scouting party": "as attacker in battle you are not affected by ambush cards",
+    "favour of the mice": "remove all enemy pieces in mouse clearings then discard",
+    "stand and deliver": "in birdsong may take a random card from another player that player scores one point",
+    "better burrow bank": "at start of birdsong you and another player draw a card",
+    "command warren": "at start of daylight may initiate a battle",
+    "cobbler": "at start of evening may take a move",
+    "favour of the rabbits": "remove all enemy pieces in rabbit clearings then discard",
+    "armourers": "in battle may discard this to ignore all rolled hits taken",
+    "brutal tactics": "in battle as attacker may deal an extra hit but defender scores one point",
+    "favour of the foxes": "remove all enemy pieces in fox clearings then discard",
+    "tax collector": "once in daylight may remove one of your warriors to draw a card",
+    "royal claim": "in birdsong may discard this to score one point per clearing you rule"
   }
+}

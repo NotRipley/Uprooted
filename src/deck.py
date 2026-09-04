@@ -78,7 +78,8 @@ class Deck:
 
     
     def draw(self, n):
-        "Draw n cards from the deck. Remove the cards drawn from the deck and return them (to be added to hand etc.)"
+        """Draw n cards from the deck. Remove the cards drawn from the deck and return them (to be added to hand etc.)
+        Acts kind of like a highlight so to discard cards we can draw them and then place them."""
         # --- check enough cards to draw and if not, reshuffle ---
         # a point here: it should draw as many as it can, then reshuffle when it hits zero
         if n > len(self.draw_pile):
@@ -96,6 +97,8 @@ class Deck:
         cards_to_draw.extend(extra)
         self.draw_pile.remove(cards_to_draw)
         return cards_to_draw
+
+
 
     def reshuffle(self):
         """move discard pile to draw pile"""

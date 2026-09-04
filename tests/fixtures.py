@@ -1,5 +1,23 @@
 import pytest
 from src.board import Board, Clearing
+from src.deck import Deck
+
+
+@pytest.fixture
+def full_deck():
+    """An instance of the base deck with a full draw pile."""
+    return Deck(".input_data/base_deck.json")
+
+@pytest.fixture
+def one_left_deck():
+    """A base deck with one card left in the draw pile and everything else in the discard."""
+    deck = Deck(".input_data/base_deck.json")
+    deck.discard_pile.append(deck.draw(len(deck.draw_pile) - 1))
+    return deck
+
+
+
+@pytest.fixture
 
 @pytest.fixture
 def clearing():

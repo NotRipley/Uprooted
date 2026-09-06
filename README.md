@@ -2,6 +2,14 @@
 ## Uprooted: Mathematically Correct Root
 This is a repo exploring the game of root (and someday) creating models to play. 
 
+### Load the Package
+```
+pip install -e .
+```
+
+
+```
+```
 ### Structure
 ```
 |-- utils/
@@ -14,7 +22,11 @@ This is a repo exploring the game of root (and someday) creating models to play.
 Uprooted/
    ├── input_data/
    ├── tests/
-   ├── utils/
+   ├── src/
+        |-- game-engine/
+              |-- board.py
+              |-- deck.py
+              |-- errors.py 
    ├── LICENSE
    └── README
 

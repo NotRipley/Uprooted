@@ -1,6 +1,6 @@
 import pytest
 from tests.fixtures import clearing, ruined_clearing
-from src.errors import IllegalActionError
+from game-engine.errors import IllegalActionError
 
 def test_add_building(clearing):
     clearing.add_building("marquise", "sawmill")

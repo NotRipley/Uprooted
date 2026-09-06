@@ -1,5 +1,5 @@
 import pytest
-from src.errors import IllegalActionError # obvs need to add that it
+from game-engine.errors import IllegalActionError # obvs need to add that it
 
 def draw_without_reshuffle(full_deck):
     n_cards = len(full_deck.draw_pile)

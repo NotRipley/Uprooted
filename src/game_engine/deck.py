@@ -4,7 +4,7 @@ Each card has a suit, cost, vp reward, item reward and description.
 """
 import json
 import numpy as np
-from game-engine.errors import InvalidCardError
+from game_engine.errors import InvalidCardError
 import random
 
 # --- classes ---
@@ -19,14 +19,14 @@ class Card:
     :param desc: text on the card | str
     """
     # --- input validation ---
-    self.check(suit, cost, vp, item, desc)
+        self.check(suit, cost, vp, item, desc)
 
-    # --- attributes ---
-    self.suit = suit
-    self.cost = cost
-    self.vp = vp
-    self.item = item
-    self.desc = desc
+        # --- attributes ---
+        self.suit = suit
+        self.cost = cost
+        self.vp = vp
+        self.item = item
+        self.desc = desc
 
 def __repr__(self): # Very good
     """Print cards nicely"""

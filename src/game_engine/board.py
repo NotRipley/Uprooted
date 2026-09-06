@@ -5,7 +5,7 @@ Each clearing has a suit, building slots and list of neighbours (which will be u
 from collections import defaultdict
 import json
 
-from game-engine.errors import InvalidMapError, IllegalActionError
+from game_engine.errors import InvalidMapError, IllegalActionError
 
 class Board:
     """

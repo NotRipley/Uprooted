@@ -15,10 +15,6 @@ def one_left_deck():
     deck.discard_pile.append(deck.draw(len(deck.draw_pile) - 1))
     return deck
 
-
-
-@pytest.fixture
-
 @pytest.fixture
 def clearing():
     """A plain 2-slot fox clearing."""

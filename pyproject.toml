@@ -1,18 +1,17 @@
 [project]
 name = "game-engine"
 version = "0.1.0"
+requires-python = ">=3.10"
 
-[buildsystem]
+[build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
-[tools.setuptools.packages.find]
+[tool.setuptools.packages.find]
 where = ["src"]
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
 
 [dependency-groups]
 dev = [
-    "pytest>=9.1.1",
+    "numpy>=2.2.6",
+    "pytest",
 ]

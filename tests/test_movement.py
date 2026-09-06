@@ -1,6 +1,6 @@
 import pytest
 from tests.fixtures import board
-from game-engine.errors import IllegalActionError
+from game_engine.errors import IllegalActionError
 
 def test_move_warriors_to_adjacent_clearing(board):
     board.clearings[1].change_warriors("marquise", 3)

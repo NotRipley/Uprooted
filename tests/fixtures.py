@@ -1,6 +1,6 @@
 import pytest
-from game-engine.board import Board, Clearing
-from game-engine.deck import Deck
+from game_engine.board import Board, Clearing
+from game_engine.deck import Deck
 
 
 @pytest.fixture

@@ -1,6 +1,6 @@
 import pytest
 from tests.fixtures import clearing
-from game-engine.errors import IllegalActionError
+from game_engine.errors import IllegalActionError
 
 def test_add_token(clearing):
     clearing.add_token("marquise", "wood")
